@@ -51,10 +51,14 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'emailverifier.urls'
 
+import os
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            os.path.join(BASE_DIR, 'templates'),  # Add templates directory to TEMPLATES setting
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
